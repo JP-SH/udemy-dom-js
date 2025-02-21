@@ -59,3 +59,31 @@ for (let colour of colours) {
   container.appendChild(box);
   box.addEventListener('click', changeColour)
 }
+
+const input = document.querySelector("#username");
+
+input.addEventListener('keydown', function(e){
+  console.log('KEY DOWN');
+});
+
+input.addEventListener('keyup', function(e){
+  console.log('KEY UP');
+});
+
+input.addEventListener('keypress', function(e){
+  console.log('KEY PRESS');
+});
+
+const addItemInput = document.querySelector('#addItem');
+const itemsUl = document.querySelector('#items');
+
+addItemInput.addEventListener('keypress', function(e){
+  if(e.key === 'Enter'){
+    if(!this.value) return;
+     const newItemText = this.value;
+     const newItem = document.createElement('li');
+     newItem.innerText = newItemText;
+     itemsUl.appendChild(newItem);
+     this.value = '';
+  }
+})
