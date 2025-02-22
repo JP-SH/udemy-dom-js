@@ -87,3 +87,41 @@ addItemInput.addEventListener('keypress', function(e){
      this.value = '';
   }
 })
+
+const form = document.querySelector('#signup-form');
+const creditCardInput = document.querySelector('#cc');
+const termsCheckbox = document.querySelector('#terms');
+const veggieSelect = document.querySelector('#veggie');
+
+
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  // usually when you submit a form it refershes the page or takes you to a new page. Prevent Deafult stops it from doing that and allows you to do something with the data submitted via the form
+  alert('SUBMITTED FORM');
+  console.log('cc', creditCardInput,value);
+  console.log('cc', termsCheckbox,checked);
+  console.log('cc', creditCardInput,value);
+})
+
+// this allows you to create an object that stays up to date with what the user is enterinf rather than only having the data once theyve submitted the form
+const formData = {};
+// creditCardInput.addEventListener('input', e => {
+//   formData['cc'] = e.target.value;
+// })
+
+// veggieSelect.addEventListener('input', e => {
+//   formData['veggie'] = e.target.value;
+// })
+
+// termsCheckbox.addEventListener('input', e => {
+//   formData['agreeToTerms'] = e.target.checked;
+// })
+
+// a shorter way to write it without hardcoding it
+for (let input of [creditCardInput,termsCheckbox, veggieSelect]) {
+  input.addEventListener('input', ({target}) => {
+    const {name, type, value, checked} = target;
+    formData[name] = type ===  'checkbox' ? checked : value;
+  })
+};
