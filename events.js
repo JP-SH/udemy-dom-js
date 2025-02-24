@@ -106,17 +106,17 @@ form.addEventListener('submit', function(e) {
 
 // this allows you to create an object that stays up to date with what the user is enterinf rather than only having the data once theyve submitted the form
 const formData = {};
-// creditCardInput.addEventListener('input', e => {
-//   formData['cc'] = e.target.value;
-// })
+creditCardInput.addEventListener('input', e => {
+  formData['cc'] = e.target.value;
+})
 
-// veggieSelect.addEventListener('input', e => {
-//   formData['veggie'] = e.target.value;
-// })
+veggieSelect.addEventListener('input', e => {
+  formData['veggie'] = e.target.value;
+})
 
-// termsCheckbox.addEventListener('input', e => {
-//   formData['agreeToTerms'] = e.target.checked;
-// })
+termsCheckbox.addEventListener('input', e => {
+  formData['agreeToTerms'] = e.target.checked;
+})
 
 // a shorter way to write it without hardcoding it
 for (let input of [creditCardInput,termsCheckbox, veggieSelect]) {
