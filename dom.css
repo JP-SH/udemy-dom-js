@@ -12,11 +12,11 @@ h1 {
   font-size: 30px;
   border: 1px solid teal;
 }
-
+/*
 /* input[type="password"] {
   height: 50px;
   width: 100px;
-}
+} */
 
 
 .todo {
@@ -30,4 +30,3 @@ h1 {
   opacity: 50%;
   /* can use toggle in the console to apply it   */
 }
-
