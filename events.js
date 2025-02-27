@@ -125,3 +125,17 @@ for (let input of [creditCardInput,termsCheckbox, veggieSelect]) {
     formData[name] = type ===  'checkbox' ? checked : value;
   })
 };
+
+// This is a simple function that checks if a number is even or odd
+function checkNumber(num) {
+  // Using a conditional statement
+  if (num % 2 === 0) {
+      console.log(num + " is even.");
+  } else {
+      console.log(num + " is odd.");
+  }
+}
+
+// Call the function with a number
+checkNumber(7); // Output: 7 is odd.
+checkNumber(10); // Output: 10 is even.
